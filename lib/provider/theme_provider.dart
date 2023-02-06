@@ -1,9 +1,10 @@
 import 'package:flutter/foundation.dart';
-import 'package:emarket_user/utill/app_constants.dart';
+import 'package:garey_ecom/utils/app_constants.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ThemeProvider with ChangeNotifier {
-  final SharedPreferences sharedPreferences;
+  final SharedPreferences? sharedPreferences;
   ThemeProvider({@required this.sharedPreferences}) {
     _loadCurrentTheme();
   }
@@ -13,12 +14,12 @@ class ThemeProvider with ChangeNotifier {
 
   void toggleTheme() {
     _darkTheme = !_darkTheme;
-    sharedPreferences.setBool(AppConstants.THEME, _darkTheme);
+    sharedPreferences!.setBool(AppConstants.THEME, _darkTheme);
     notifyListeners();
   }
 
   void _loadCurrentTheme() async {
-    _darkTheme = sharedPreferences.getBool(AppConstants.THEME) ?? false;
+    _darkTheme = sharedPreferences!.getBool(AppConstants.THEME) ?? false;
     notifyListeners();
   }
 }

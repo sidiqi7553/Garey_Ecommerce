@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:emarket_user/utill/dimensions.dart';
+import 'package:garey_ecom/utils/demensions.dart';
+
 
 ThemeData dark = ThemeData(
   fontFamily: 'Rubik',
