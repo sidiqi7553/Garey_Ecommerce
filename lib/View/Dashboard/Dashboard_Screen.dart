@@ -26,9 +26,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
     //   Provider.of<SplashProvider>(context, listen: false).getPolicyPage(context);
     // }
 
-    _pageIndex = widget.pageIndex!;
+    _pageIndex = widget.pageIndex;
 
-    _pageController = PageController(initialPage: widget.pageIndex!);
+    _pageController = PageController(initialPage: widget.pageIndex);
 
     _screens = [
       Container(
