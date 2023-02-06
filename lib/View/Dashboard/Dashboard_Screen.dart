@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:garey_ecom/utils/color_resources.dart';
 
+import '../menu/menu_screen.dart';
+
 class DashboardScreen extends StatefulWidget {
   final int pageIndex;
   DashboardScreen({required this.pageIndex});
@@ -50,10 +52,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
       // SearchScreen(),
       // OrderScreen(),
       // // WishListScreen(),
-      // MenuScreen(onTap: (int pageIndex) {
-      //   _setPage(pageIndex);
-      // }),
-    ];
+      MenuScreen(onTap: (int pageIndex) {
+    _setPage(pageIndex);
+    // }),
+    } )] ;
 
  //   if(ResponsiveHelper.isMobilePhone()) {
   //    NetworkInfo.checkConnectivity(_scaffoldKey);
@@ -224,7 +226,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
       return Column(
         children: [
           AnimatedContainer(
-
             curve: Curves.easeInOut,
             duration: const Duration(milliseconds: 50),
             height: 50,
