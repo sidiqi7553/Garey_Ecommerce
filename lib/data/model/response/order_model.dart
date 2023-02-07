@@ -1,30 +1,29 @@
-// import 'package:emarket_user/data/model/response/product_model.dart';
 //
 // class OrderModel {
-//   int _id;
-//   int _userId;
-//   double _orderAmount;
-//   double _couponDiscountAmount;
-//   String _couponDiscountTitle;
-//   String _paymentStatus;
-//   String _orderStatus;
-//   double _totalTaxAmount;
-//   String _paymentMethod;
-//   String _transactionReference;
-//   int _deliveryAddressId;
-//   String _createdAt;
-//   String _updatedAt;
-//   int _deliveryManId;
-//   double _deliveryCharge;
-//   String _orderNote;
-//   List<int> _addOnIds;
+//   int? _id;
+//   int? _userId;
+//   double? _orderAmount;
+//   double? _couponDiscountAmount;
+//   String? _couponDiscountTitle;
+//   String? _paymentStatus;
+//   String? _orderStatus;
+//   double? _totalTaxAmount;
+//   String? _paymentMethod;
+//   String? _transactionReference;
+//   int? _deliveryAddressId;
+//   String? _createdAt;
+//   String? _updatedAt;
+//   int? _deliveryManId;
+//   double? _deliveryCharge;
+//   String? _orderNote;
+//   List<int>? _addOnIds;
 //   List<Details> _details;
-//   DeliveryMan _deliveryMan;
-//   int _detailsCount;
-//   String _orderType;
-//   int _deliverymanReviewCount;
-//   DeliveryAddress _deliveryAddress;
-//   double _extraDiscount;
+//   DeliveryMan? _deliveryMan;
+//   int? _detailsCount;
+//   String? _orderType;
+//   int? _deliverymanReviewCount;
+//   DeliveryAddress? _deliveryAddress;
+//   double? _extraDiscount;
 //
 //   OrderModel(
 //       {int id,

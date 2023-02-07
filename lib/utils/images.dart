@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../provider/theme_provider.dart';
+
 class Images {
   static const String home = 'assets/image/home_icon.png';
   static const String maintenance = 'assets/image/maintenance.png';
@@ -38,9 +40,9 @@ class Images {
   static const String guest_login = 'assets/image/guest_login.png';
   static const String placeholder_light = 'assets/image/placeholder.jpg';
   static const String placeholder_dark = 'assets/image/dark_placeholder.png';
-  // static String placeholder(BuildContext context) {
-  //   return Provider.of<ThemeProvider>(context).darkTheme ? placeholder_dark : placeholder_light;
-  // }
+  static String placeholder(BuildContext context) {
+    return Provider.of<ThemeProvider>(context).darkTheme ? placeholder_dark : placeholder_light;
+  }
 
   static const String logo = 'assets/image/logo.png';
   static const String splash_logo = 'assets/image/logo_garey.png';

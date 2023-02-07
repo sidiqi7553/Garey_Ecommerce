@@ -1,12 +1,10 @@
 // import 'dart:convert';
 // import 'package:flutter/material.dart';
-// import 'package:emarket_user/data/model/response/base/api_response.dart';
-// import 'package:emarket_user/data/model/response/response_model.dart';
-// import 'package:emarket_user/data/model/response/userinfo_model.dart';
-// import 'package:emarket_user/data/repository/profile_repo.dart';
-// import 'package:emarket_user/helper/api_checker.dart';
+//
 // import 'package:http/http.dart' as http;
 // import 'package:image_picker/image_picker.dart';
+//
+// import '../data/model/response/response_model.dart';
 //
 // class ProfileProvider with ChangeNotifier {
 //   final ProfileRepo profileRepo;

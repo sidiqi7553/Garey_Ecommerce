@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:garey_ecom/utils/color_resources.dart';
 
+import '../menu/menu_screen.dart';
+
 
 
 class DashboardScreen extends StatefulWidget {
@@ -43,19 +45,17 @@ class _DashboardScreenState extends State<DashboardScreen> {
       Container(
         color: Colors.pink,
       ),
-      Container(
-        color: Colors.green,
-      ),
+
       // HomeScreen(),
       //
       // CartScreen(),
       // SearchScreen(),
       // OrderScreen(),
       // // WishListScreen(),
-    //   MenuScreen(onTap: (int pageIndex) {
-    // _setPage(pageIndex);
-    // // }),
-    // } )
+      MenuScreen(onTap: (int pageIndex) {
+        _setPage(pageIndex);
+      } )
+
     ] ;
 
  //   if(ResponsiveHelper.isMobilePhone()) {
