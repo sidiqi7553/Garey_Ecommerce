@@ -1,31 +1,31 @@
-//
+// import 'package:emarket_user/data/model/response/order_model.dart';
+// import 'package:emarket_user/helper/responsive_helper.dart';
+// import 'package:emarket_user/view/base/footer_web_view.dart';
 // import 'package:flutter/material.dart';
 // import 'package:flutter/services.dart';
-// import 'package:garey_ecom/localization/language_constrants.dart';
-//
+// import 'package:emarket_user/localization/language_constrants.dart';
+// import 'package:emarket_user/utill/color_resources.dart';
+// import 'package:emarket_user/utill/dimensions.dart';
+// import 'package:emarket_user/utill/images.dart';
+// import 'package:emarket_user/utill/styles.dart';
+// import 'package:emarket_user/view/base/custom_app_bar.dart';
 // import 'package:google_maps_flutter/google_maps_flutter.dart';
 //
 // import 'dart:typed_data';
 // import 'dart:ui';
 //
-// import '../../data/model/response/order_model.dart';
-// import '../../utils/color_resources.dart';
-// import '../../utils/demensions.dart';
-// import '../../utils/images.dart';
-// import '../../utils/styles.dart';
-// import 'custom_app_bar.dart';
-//
+// import 'web_header/web_app_bar.dart';
 //
 // class MapWidget extends StatefulWidget {
 //   final DeliveryAddress address;
-//   MapWidget({required this.address});
+//   MapWidget({@required this.address});
 //
 //   @override
 //   _MapWidgetState createState() => _MapWidgetState();
 // }
 //
 // class _MapWidgetState extends State<MapWidget> {
-//   late LatLng _latLng;
+//   LatLng _latLng;
 //   Set<Marker> _markers = Set.of([]);
 //
 //   @override
@@ -40,21 +40,21 @@
 //   Widget build(BuildContext context) {
 //     final _height = MediaQuery.of(context).size.height;
 //     return Scaffold(
-//       // appBar: CustomAppBar(title: , Svg: ''),
+//       appBar: ResponsiveHelper.isDesktop(context)? PreferredSize(child: WebAppBar(), preferredSize: Size.fromHeight(120)):  CustomAppBar(title: getTranslated('delivery_address', context), Svg: ''),
 //       body: SingleChildScrollView(
-//         physics:  NeverScrollableScrollPhysics(),
+//         physics: ResponsiveHelper.isDesktop(context) ? AlwaysScrollableScrollPhysics() : NeverScrollableScrollPhysics(),
 //         child: Column(
 //           children: [
 //             Padding(
-//               padding: EdgeInsets.all( Dimensions.PADDING_SIZE_SMALL ),
+//               padding: EdgeInsets.all(ResponsiveHelper.isDesktop(context) ? Dimensions.PADDING_SIZE_SMALL : 0 ),
 //               child: Center(
 //                 child: Container(
-//                   padding: EdgeInsets.all(  Dimensions.PADDING_SIZE_SMALL  ),
-//                   decoration:  BoxDecoration(
+//                   padding: EdgeInsets.all(ResponsiveHelper.isDesktop(context) ? Dimensions.PADDING_SIZE_SMALL : 0 ),
+//                   decoration: ResponsiveHelper.isDesktop(context) ? BoxDecoration(
 //                     color: Theme.of(context).cardColor, borderRadius: BorderRadius.circular(10),
-//                     boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 5, spreadRadius: 1)],
-//                   ) ,
-//                   height: _height * 0.7,
+//                     boxShadow: [BoxShadow(color: Colors.grey[300], blurRadius: 5, spreadRadius: 1)],
+//                   ) : null,
+//                   height: ResponsiveHelper.isDesktop(context) ?   _height * 0.7 : _height * 0.9,
 //                   width: Dimensions.WEB_SCREEN_WIDTH,
 //                   child: Stack(children: [
 //                     GoogleMap(
@@ -73,7 +73,7 @@
 //                         decoration: BoxDecoration(
 //                           borderRadius: BorderRadius.circular(5),
 //                           color: Theme.of(context).cardColor,
-//                           boxShadow: [BoxShadow(color: Colors.grey, spreadRadius: 3, blurRadius: 10)],
+//                           boxShadow: [BoxShadow(color: Colors.grey[300], spreadRadius: 3, blurRadius: 10)],
 //                         ),
 //                         child: Column(
 //                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -92,7 +92,7 @@
 //                                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.center, children: [
 //
 //                                   Text(widget.address.addressType, style: rubikRegular.copyWith(
-//                                     fontSize: Dimensions.FONT_SIZE_SMALL, color: ColorResources.COLOR_GREY,
+//                                     fontSize: Dimensions.FONT_SIZE_SMALL, color: ColorResources.getGreyBunkerColor(context),
 //                                   )),
 //
 //                                   Text(widget.address.address, style: rubikMedium),
@@ -116,7 +116,8 @@
 //                 ),
 //               ),
 //             ),
-//
+//             if(ResponsiveHelper.isDesktop(context)) SizedBox(height: Dimensions.PADDING_SIZE_LARGE),
+//             if(ResponsiveHelper.isDesktop(context)) FooterView(),
 //           ],
 //         ),
 //       ),
@@ -140,7 +141,7 @@
 //     ByteData data = await rootBundle.load(imagePath);
 //     Codec codec = await instantiateImageCodec(data.buffer.asUint8List(), targetWidth: width);
 //     FrameInfo fi = await codec.getNextFrame();
-//     return (await fi.image.toByteData(format: ImageByteFormat.png))!.buffer.asUint8List();
+//     return (await fi.image.toByteData(format: ImageByteFormat.png)).buffer.asUint8List();
 //   }
 //
 // }

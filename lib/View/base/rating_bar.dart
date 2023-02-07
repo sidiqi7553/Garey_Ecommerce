@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 class RatingBar extends StatelessWidget {
   final double rating;
   final double size;
-  final Color color;
+  final Color? color;
 
-  RatingBar({required this.rating, this.size = 18,required this.color });
+  RatingBar({required this.rating, this.size = 18,this.color });
 
   @override
   Widget build(BuildContext context) {

@@ -1,33 +1,34 @@
 // import 'package:flutter/material.dart';
-//
+// import 'package:emarket_user/provider/language_provider.dart';
+// import 'package:emarket_user/utill/color_resources.dart';
+// import 'package:emarket_user/utill/dimensions.dart';
 // import 'package:flutter/services.dart';
 //
-// import '../../utils/demensions.dart';
-//
 // class CustomTextField extends StatefulWidget {
-//   final String? hintText;
-//   final TextEditingController? controller;
-//   final FocusNode? focusNode;
-//   final FocusNode? nextFocus;
-//   final TextInputType? inputType;
-//   final TextInputAction? inputAction;
-//   final Color? fillColor;
-//   final int? maxLines;
-//   final bool? isPassword;
-//   final bool? isCountryPicker;
-//   final bool? isShowBorder;
-//   final bool? isIcon;
-//   final bool? isShowSuffixIcon;
-//   final bool? isShowPrefixIcon;
-//   final Function? onTap;
-//   final Function? onChanged;
-//   final Function? onSuffixTap;
-//   final String? suffixIconUrl;
-//   final String? prefixIconUrl;
-//   final bool? isSearch;
-//   final Function? onSubmit;
-//   final bool? isEnabled;
-//   final TextCapitalization? capitalization;
+//   final String hintText;
+//   final TextEditingController controller;
+//   final FocusNode focusNode;
+//   final FocusNode nextFocus;
+//   final TextInputType inputType;
+//   final TextInputAction inputAction;
+//   final Color fillColor;
+//   final int maxLines;
+//   final bool isPassword;
+//   final bool isCountryPicker;
+//   final bool isShowBorder;
+//   final bool isIcon;
+//   final bool isShowSuffixIcon;
+//   final bool isShowPrefixIcon;
+//   final Function onTap;
+//   final Function onChanged;
+//   final Function onSuffixTap;
+//   final String suffixIconUrl;
+//   final String prefixIconUrl;
+//   final bool isSearch;
+//   final Function onSubmit;
+//   final bool isEnabled;
+//   final TextCapitalization capitalization;
+//   final LanguageProvider languageProvider;
 //
 //   CustomTextField(
 //       {this.hintText = 'Write something...',
@@ -53,7 +54,7 @@
 //       this.suffixIconUrl,
 //       this.prefixIconUrl,
 //       this.isSearch = false,
-//     });
+//       this.languageProvider});
 //
 //   @override
 //   _CustomTextFieldState createState() => _CustomTextFieldState();
@@ -68,10 +69,11 @@
 //       maxLines: widget.maxLines,
 //       controller: widget.controller,
 //       focusNode: widget.focusNode,
-//       style: Theme.of(context).textTheme.headline2,
+//       style: Theme.of(context).textTheme.headline2.copyWith(color: Theme.of(context).textTheme.bodyText1.color, fontSize: Dimensions.FONT_SIZE_LARGE),
 //       textInputAction: widget.inputAction,
 //       keyboardType: widget.inputType,
 //       cursorColor: Theme.of(context).primaryColor,
+//       textCapitalization: widget.capitalization,
 //       enabled: widget.isEnabled,
 //       autofocus: false,
 //       //onChanged: widget.isSearch ? widget.languageProvider.searchLanguage : null,
@@ -86,7 +88,7 @@
 //         isDense: true,
 //         hintText: widget.hintText,
 //         fillColor: widget.fillColor != null ? widget.fillColor : Theme.of(context).cardColor,
-//         hintStyle: Theme.of(context).textTheme.headline2!.copyWith(fontSize: Dimensions.FONT_SIZE_SMALL, color: ColorResources.COLOR_GREY_CHATEAU),
+//         hintStyle: Theme.of(context).textTheme.headline2.copyWith(fontSize: Dimensions.FONT_SIZE_SMALL, color: ColorResources.COLOR_GREY_CHATEAU),
 //         filled: true,
 //         prefixIcon: widget.isShowPrefixIcon ? Padding(
 //           padding: const EdgeInsets.only(left: Dimensions.PADDING_SIZE_LARGE, right: Dimensions.PADDING_SIZE_SMALL),
@@ -105,7 +107,7 @@
 //                           widget.suffixIconUrl,
 //                           width: 15,
 //                           height: 15,
-//                           color: Theme.of(context).textTheme.bodyText1!.color,
+//                           color: Theme.of(context).textTheme.bodyText1.color,
 //                         ),
 //                       )
 //                     : null
@@ -113,7 +115,7 @@
 //       ),
 //       onTap: widget.onTap,
 //       onSubmitted: (text) => widget.nextFocus != null ? FocusScope.of(context).requestFocus(widget.nextFocus)
-//           : widget.onSubmit != null ? widget.onSubmit!(text) : null,
+//           : widget.onSubmit != null ? widget.onSubmit(text) : null,
 //       onChanged: widget.onChanged,
 //     );
 //   }

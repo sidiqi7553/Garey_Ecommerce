@@ -18,10 +18,7 @@
 // import '../../localization/language_constrants.dart';
 // import '../../provider/auth_provider.dart';
 // import '../../provider/wishlist_provider.dart';
-// import '../../utils/color_resources.dart';
-// import '../../utils/routes.dart';
 // import 'custom_snackbar.dart';
-// import 'on_hover.dart';
 //
 // class ProductWidget2 extends StatelessWidget {
 //   final Product product;

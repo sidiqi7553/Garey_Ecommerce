@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:garey_ecom/utils/demensions.dart';
+import 'package:garey_ecom/utils/styles.dart';
 
-
-import '../../utils/demensions.dart';
-import '../../utils/styles.dart';
 
 class TitleWidget extends StatelessWidget {
-  final String title;
-  final Function onTap;
+  final String? title;
+  final VoidCallback? onTap;
 
-  TitleWidget({required this.title, required this.onTap});
+  TitleWidget({@required this.title, this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-      Text(title, style: rubikMedium),
+      Text(title!, style: rubikMedium),
       onTap != null ? InkWell(
-        onTap: (){},
+        onTap: onTap,
         child: Padding(
           padding: EdgeInsets.fromLTRB(10, 5, 0, 5),
           child: Text(

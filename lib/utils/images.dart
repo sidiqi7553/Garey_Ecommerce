@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:garey_ecom/provider/theme_provider.dart';
 import 'package:provider/provider.dart';
 
 import '../provider/theme_provider.dart';

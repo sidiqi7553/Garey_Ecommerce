@@ -1,11 +1,12 @@
-//
+// import 'package:emarket_user/helper/responsive_helper.dart';
+// import 'package:emarket_user/utill/routes.dart';
+// import 'package:emarket_user/view/base/footer_web_view.dart';
 // import 'package:flutter/material.dart';
-//
-// import '../../localization/language_constrants.dart';
-// import '../../utils/demensions.dart';
-// import '../../utils/images.dart';
-// import '../../utils/styles.dart';
-//
+// import 'package:emarket_user/localization/language_constrants.dart';
+// import 'package:emarket_user/utill/dimensions.dart';
+// import 'package:emarket_user/utill/images.dart';
+// import 'package:emarket_user/utill/styles.dart';
+// import 'package:emarket_user/view/base/custom_button.dart';
 //
 // class NotLoggedInScreen extends StatelessWidget {
 //   @override
@@ -14,7 +15,7 @@
 //       child: Column(
 //         children: [
 //           ConstrainedBox(
-//             constraints: BoxConstraints(minHeight:  MediaQuery.of(context).size.height -400 ),
+//             constraints: BoxConstraints(minHeight: ResponsiveHelper.isDesktop(context) ? MediaQuery.of(context).size.height -400 : MediaQuery.of(context).size.height),
 //             child: Center(
 //               child: Padding(
 //                 padding: EdgeInsets.all(Dimensions.PADDING_SIZE_LARGE),

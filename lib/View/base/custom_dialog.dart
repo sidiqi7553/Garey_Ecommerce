@@ -34,14 +34,14 @@
 //
 // class Rotation3DTransition extends AnimatedWidget {
 //   const Rotation3DTransition({
-//     Key? key,
-//     required Animation<double> turns,
+//     Key key,
+//     @required Animation<double> turns,
 //     this.alignment = Alignment.center,
-//     required this.child,
+//     this.child,
 //   })  : assert(turns != null),
 //         super(key: key, listenable: turns);
 //
-//   Listenable get turns => listenable;
+//   Animation<double> get turns => listenable;
 //
 //   final Alignment alignment;
 //   final Widget child;

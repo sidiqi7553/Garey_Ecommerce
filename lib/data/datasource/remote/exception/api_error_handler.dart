@@ -1,5 +1,5 @@
 // import 'package:dio/dio.dart';
-// import 'package:emarket_user/data/model/response/base/error_response.dart';
+//
 //
 // class ApiErrorHandler {
 //   static dynamic getMessage(error) {
@@ -23,11 +23,11 @@
 //                   "Receive timeout in connection with API server";
 //               break;
 //             case DioErrorType.response:
-//               switch (error.response.statusCode) {
+//               switch (error.response!.statusCode) {
 //                 case 404:
 //                 case 500:
 //                 case 503:
-//                   errorDescription = error.response.statusMessage;
+//                   errorDescription = error.response!.statusMessage;
 //                   break;
 //                 default:
 //                   ErrorResponse errorResponse;

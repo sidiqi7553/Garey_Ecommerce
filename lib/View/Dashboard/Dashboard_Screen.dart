@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:garey_ecom/View/Home/Home_Screen.dart';
 import 'package:garey_ecom/utils/color_resources.dart';
 
 import '../menu/menu_screen.dart';
@@ -33,9 +34,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     _pageController = PageController(initialPage: widget.pageIndex);
 
     _screens = [
-      Container(
-        color: Colors.blue,
-      ),
+      HomeScreen(),
       Container(
         color: Colors.black,
       ),

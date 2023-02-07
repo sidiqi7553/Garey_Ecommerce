@@ -1,18 +1,19 @@
 // import 'package:flutter/material.dart';
-// import 'package:emarket_user/data/datasource/remote/dio/dio_client.dart';
-// import 'package:emarket_user/data/datasource/remote/exception/api_error_handler.dart';
-// import 'package:emarket_user/data/model/response/base/api_response.dart';
-// import 'package:emarket_user/utill/app_constants.dart';
+// import 'package:garey_ecom/data/datasource/remote/dio/dio_client.dart';
+// import 'package:garey_ecom/data/datasource/remote/exception/api_error_handler.dart';
+// import 'package:garey_ecom/data/model/response/base/api_response.dart';
+// import 'package:garey_ecom/utils/app_constants.dart';
+//
 // import 'package:shared_preferences/shared_preferences.dart';
 //
 // class SplashRepo {
-//   final DioClient dioClient;
-//   final SharedPreferences sharedPreferences;
+//   final DioClient? dioClient;
+//   final SharedPreferences? sharedPreferences;
 //   SplashRepo({@required this.sharedPreferences, @required this.dioClient});
 //
 //   Future<ApiResponse> getConfig() async {
 //     try {
-//       final response = await dioClient.get(AppConstants.CONFIG_URI);
+//       final response = await dioClient!.get(AppConstants.CONFIG_URI);
 //       return ApiResponse.withSuccess(response);
 //     } catch (e) {
 //       return ApiResponse.withError(ApiErrorHandler.getMessage(e));
@@ -20,7 +21,7 @@
 //   }
 //   Future<ApiResponse> getPolicyPage() async {
 //     try {
-//       final response = await dioClient.get(AppConstants.POLICY_PAGE);
+//       final response = await dioClient!.get(AppConstants.POLICY_PAGE);
 //       return ApiResponse.withSuccess(response);
 //     } catch (e) {
 //       return ApiResponse.withError(ApiErrorHandler.getMessage(e));
@@ -28,7 +29,7 @@
 //   }
 //
 //   Future<bool> initSharedData() {
-//     if(!sharedPreferences.containsKey(AppConstants.THEME)) {
+//     if(!sharedPreferences!.containsKey(AppConstants.THEME)) {
 //       return sharedPreferences.setBool(AppConstants.THEME, false);
 //     }
 //     if(!sharedPreferences.containsKey(AppConstants.COUNTRY_CODE)) {
