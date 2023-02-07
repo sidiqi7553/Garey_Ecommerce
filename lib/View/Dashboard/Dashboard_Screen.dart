@@ -4,6 +4,7 @@ import 'package:garey_ecom/View/Home/Home_Screen.dart';
 import 'package:garey_ecom/utils/color_resources.dart';
 
 import '../menu/menu_screen.dart';
+import '../order/order_screen.dart';
 
 
 
@@ -41,15 +42,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
       Container(
         color: Colors.purple,
       ),
-      Container(
-        color: Colors.pink,
-      ),
+
 
       // HomeScreen(),
       //
       // CartScreen(),
       // SearchScreen(),
-      // OrderScreen(),
+      OrderScreen(),
       // // WishListScreen(),
       MenuScreen(onTap: (int pageIndex) {
         _setPage(pageIndex);
