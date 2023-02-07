@@ -42,7 +42,7 @@ class CategoryView extends StatelessWidget {
           children: [
             Expanded(
               child: SizedBox(
-                height: 90,
+                height: 110,
                 child: allCatogries != null
                     ? allCatogries.length > 0
                         ? ListView.builder(
@@ -65,18 +65,18 @@ class CategoryView extends StatelessWidget {
                                   ),
                                   child: Column(children: [
                                     Container(
-                                      width: 65,
-                                      height: 65,
+                                      width: 85,
+                                      height: 85,
                                       decoration: BoxDecoration(
                                           borderRadius: BorderRadius.all(
-                                              Radius.circular(40)),
+                                              Radius.circular(10)),
                                           border: Border.all(
                                               width: .5,
                                               color:
                                                   Theme.of(context).hintColor)),
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.all(
-                                            Radius.circular(40)),
+                                            Radius.circular(10)),
                                         child: FadeInImage.assetNetwork(
                                           placeholder: Images.home,
                                           image: '${allCatogries[index]}',
@@ -93,6 +93,7 @@ class CategoryView extends StatelessWidget {
                                         ),
                                       ),
                                     ),
+                                    SizedBox(height: 5,),
                                     Container(
                                       width: 60,
                                       child: Center(

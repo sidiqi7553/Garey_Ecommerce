@@ -11,6 +11,7 @@ import '../../utils/color_resources.dart';
 import '../../utils/images.dart';
 import '../../utils/routes.dart';
 import '../../utils/styles.dart';
+import '../product/product_details_screen.dart';
 import 'custom_snackbar.dart';
 import 'rating_bar.dart';
 
@@ -56,12 +57,13 @@ class ProductWidget3 extends StatelessWidget {
       padding: EdgeInsets.only(bottom: Dimensions.PADDING_SIZE_SMALL),
       child: InkWell(
         onTap: () {
-          // Navigator.of(context).pushNamed(
-          //   Routes.getProductDetailsRoute(
-          //   //    product.id
-          //   ),
-          //   arguments: Container(color: Colors.pink,)
-           // ProductDetailsScreen(product: product),
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> ProductDetailsScreen(),));
+         //  Navigator.of(context).pushNamed(
+         //    Routes.getProductDetailsRoute(
+         //      //product.id
+         //    ),
+         //    arguments: 
+         //   ProductDetailsScreen(),
          // );
         },
         child: Container(

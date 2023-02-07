@@ -66,8 +66,15 @@ class Routes {
   static String getMaintainRoute() => MAINTAIN;
   static String getUpdateRoute() => UPDATE;
   static String getDashboardRoute(String page) => '$DASHBOARD_SCREEN?page=$page';
-  static String getProductDetailsRoute(int id) => '$productDetails?id=$id';
-  static String getProductImageRoute(String images) => '$productImages?images=$images';
+  static String getProductDetailsRoute(
+     // int id
+      ) =>
+      //'$
+  productDetails;
+  //'
+      //'?id=$id';
+//  static String getProductImageRoute(String images) => '$productImages?images=$images';
+  static String getProductImageRoute() => productImages;
   static String getSearchRoute() => SEARCH_SCREEN;
   static String getOfferRoute() => OFFER_SCREEN;
   static String getSearchResultRoute(String text) {
