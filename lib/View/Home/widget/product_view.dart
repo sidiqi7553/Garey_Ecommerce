@@ -83,9 +83,9 @@ class _ProductViewState extends State<ProductView> {
                 shrinkWrap: true,
                 itemBuilder: (BuildContext context, int index) {
                   return
-                   //   Container(color: Colors.green,);
-                   ProductWidget3();
-                  // );
+                    Container(color: Colors.green,);
+                   //ProductWidget3();
+                  // );//
                 },
           ),
         //       : NoDataScreen() : GridView.builder(
