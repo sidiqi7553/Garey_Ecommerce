@@ -47,13 +47,15 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   int selectedMenuIndex = 0;
   bool selected = false;
 
-
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
 
-    _tabController = new TabController(length: 8, vsync: this, );
+    _tabController = new TabController(
+      length: 8,
+      vsync: this,
+    );
 
     _tabController.addListener(() {
       setState(() {
@@ -120,14 +122,13 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           ],
         ),
         body: Container(
-          decoration: BoxDecoration(
-          ),
+          decoration: BoxDecoration(),
 
           // margin: EdgeInsets.only(top: 10, left: 10),
           child: Row(
             children: <Widget>[
               Container(
-                width: MediaQuery.of(context).size.width*0.2,
+                width: MediaQuery.of(context).size.width * 0.2,
                 child: SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -135,8 +136,8 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                       Column(
                         children: [
                           NavigationMenu(
-                              IconeName: Icons.phone_android,
-                              IconText: 'Mobile Phones',
+                              IconeName: Icons.man,
+                              IconText: 'Men Shirts',
                               isSelected: selectedMenuIndex == 0,
                               onClick: () {
                                 _tabController.animateTo(0);
@@ -144,56 +145,61 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                         ],
                       ),
                       NavigationMenu(
-                          IconeName: Icons.laptop_chromebook_outlined,
-                          IconText: 'Laptops',
+                          IconeName: Icons.woman,
+                          IconText: 'Women Shirts',
                           isSelected: selectedMenuIndex == 1,
                           onClick: () {
                             _tabController.animateTo(1);
                           }),
                       NavigationMenu(
-                          IconeName: Icons.travel_explore_outlined,
-                          IconText: 'Travel',
+                          IconeName: Icons.bed_outlined,
+                          IconText: 'Bedding',
                           isSelected: selectedMenuIndex == 2,
                           onClick: () {
                             _tabController.animateTo(2);
                           }),
                       NavigationMenu(
-                          IconeName: Icons.fastfood,
-                          IconText: 'Food',
+                          IconeName: Icons.headphones_outlined,
+                          IconText: 'Electronics',
                           isSelected: selectedMenuIndex == 3,
                           onClick: () {
                             _tabController.animateTo(3);
                           }),
                       NavigationMenu(
-                          IconeName: Icons.electrical_services_outlined,
-                          IconText: 'Electronics',
+                          IconeName: Icons.snowshoeing_outlined,
+                          IconText: 'Travel',
+                          isSelected: selectedMenuIndex == 7,
+                          onClick: () {
+                            _tabController.animateTo(7);
+                          }),
+                      NavigationMenu(
+                          IconeName: Icons.fastfood,
+                          IconText: 'Food',
                           isSelected: selectedMenuIndex == 4,
                           onClick: () {
                             _tabController.animateTo(4);
                           }),
-
                       NavigationMenu(
-                          IconeName: Icons.woman,
-                          IconText: 'Women Shirts',
+                          IconeName: Icons.electrical_services_outlined,
+                          IconText: 'Electronics',
                           isSelected: selectedMenuIndex == 5,
                           onClick: () {
                             _tabController.animateTo(5);
                           }),
                       NavigationMenu(
-                          IconeName: Icons.child_friendly,
-                          IconText: 'Child Category',
+                          IconeName: Icons.woman,
+                          IconText: 'Women Shirts',
                           isSelected: selectedMenuIndex == 6,
                           onClick: () {
                             _tabController.animateTo(6);
                           }),
                       NavigationMenu(
-                          IconeName: Icons.bed_outlined,
-                          IconText: 'Bedding',
-                          isSelected: selectedMenuIndex == 7,
+                          IconeName: Icons.child_friendly,
+                          IconText: 'Child Category',
+                          isSelected: selectedMenuIndex == 8,
                           onClick: () {
-                            _tabController.animateTo(7);
+                            _tabController.animateTo(8);
                           }),
-
                     ],
                   ),
                 ),
@@ -208,11 +214,11 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                       WomenUnstiched(),
                       WomenUnstichedOrginal(),
                       Bedding(),
+                      Electronics(),
                       Food(),
                       Travel(),
                       Laptops(),
                       Mobiles(),
-                      Electronics(),
                     ],
                   ),
                 ),

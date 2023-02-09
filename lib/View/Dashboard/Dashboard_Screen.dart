@@ -44,7 +44,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
       // HomeScreen(),
       //
-      SearchPage(),
+      SearchScreen(),
       OrderScreen(),
       // // WishListScreen(),
       MenuScreen(onTap: (int pageIndex) {
