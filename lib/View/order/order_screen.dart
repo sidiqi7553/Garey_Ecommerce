@@ -56,72 +56,114 @@ class _OrderScreenState extends State<OrderScreen>
             ]),
         body: Column(children: [
           Divider(),
-          Container(
-            height: 50,
-            width: MediaQuery.of(context).size.width * 0.9,
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(25),
-                border: Border.all(
-                  color: Colors.grey,
-                )),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        isRunning = true;
-                      });
-                    },
-                    child: Container(
-                      height: 50,
-                      alignment: Alignment.center,
-                      child: Text("Running", style: TextStyle(fontSize: 15)),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(25),
-                          color: isRunning
-                              ? Theme.of(context).primaryColor
-                              : Colors.white),
-                    ),
+                Container(
+                  height: 40,
+                  width: MediaQuery.of(context).size.width * 0.3,
+                  decoration: BoxDecoration(
+                      // color: Colors.white,
+                      borderRadius: BorderRadius.circular(25),
+                      border: Border.all(
+                        color: Colors.grey,
+                      )),
+                  child: Row(
+
+                    children: [
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              isRunning = true;
+                            });
+                          },
+                          child: Container(
+                            height: 40,
+                            alignment: Alignment.center,
+                            child:
+                                Text("Running", style: TextStyle(fontSize: 15)),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                color: isRunning
+                                    ? Theme.of(context).primaryColor
+                                    : Colors.white),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        isRunning = false;
-                      });
-                    },
-                    child: Container(
-                      height: 50,
-                      alignment: Alignment.center,
-                      child: Text("History", style: TextStyle(fontSize: 15)),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(25),
-                          color: isRunning
-                              ? Colors.white
-                              : Theme.of(context).primaryColor),
-                    ),
+                Container(
+                  height: 40,
+                  width: MediaQuery.of(context).size.width * 0.3,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(25),
+                      border: Border.all(
+                        color: Colors.grey,
+                      )),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              isRunning = false;
+                            });
+                          },
+                          child: Container(
+                            height: 50,
+                            alignment: Alignment.center,
+                            child:
+                                Text("History", style: TextStyle(fontSize: 15)),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                color: isRunning
+                                    ? Colors.white
+                                    : Theme.of(context).primaryColor),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        isRunning = false;
-                      });
-                    },
-                    child: Container(
-                      height: 50,
-                      alignment: Alignment.center,
-                      child: Text("Returned", style: TextStyle(fontSize: 15)),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(25),
-                          color: isRunning
-                              ? Colors.white
-                              : Theme.of(context).primaryColor),
-                    ),
+                Container(
+                  height: 40,
+                  width: MediaQuery.of(context).size.width * 0.3,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(25),
+                      border: Border.all(
+                        // color: Colors.blue,
+                        // width: 2
+                      )),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              isRunning = false;
+                            });
+                          },
+                          child: Container(
+                            height: 50,
+                            alignment: Alignment.center,
+                            child:
+                                Text("Returned", style: TextStyle(fontSize: 15)),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                color: isRunning
+                                    ? Colors.white
+                                    : Theme.of(context).primaryColor),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
@@ -130,12 +172,14 @@ class _OrderScreenState extends State<OrderScreen>
           Expanded(
               child: TabBarView(
             controller: _tabController,
+
             children: [
               Tab(child: OrderView(isRunning: true)),
               Tab(child: OrderView(isRunning: false)),
-              Tab(child: OrderView(isRunning: false)),
+              Tab(child: OrderView(isRunning: true)),
             ],
-          )),
+          )
+          ),
         ]));
   }
 }

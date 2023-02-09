@@ -63,6 +63,9 @@ class ColorResources {
   static const Color DISABLE_COLOR = Color(0xFF979797);
   static const Color CATEGORY_SHADOW = Color(0xFFA7A7A7);
   static const Color CARD_SHADOW_COLOR = Color(0xFFA7A7A7);
+  static const Color navigationSelectionColor = Color(0xffffc107);
+  static const Color COLOR_GREEN = Colors.green;
+
 
   static const Map<int, Color> colorMap = {
     50: Color(0x10192D6B),

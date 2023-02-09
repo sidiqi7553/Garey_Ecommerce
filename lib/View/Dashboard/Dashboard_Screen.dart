@@ -3,13 +3,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:garey_ecom/View/Home/Home_Screen.dart';
 import 'package:garey_ecom/utils/color_resources.dart';
 
+import '../categorires/main_category_page.dart';
 import '../menu/menu_screen.dart';
 import '../order/order_screen.dart';
-
-
+import '../search/search_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   final int pageIndex;
+
   DashboardScreen({required this.pageIndex});
 
   @override
@@ -36,28 +37,23 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
     _screens = [
       HomeScreen(),
-      Container(
-        color: Colors.black,
-      ),
-      Container(
-        color: Colors.purple,
-      ),
-
+      main_category_page(),
+      // Container(
+      //   color: Colors.purple,
+      // ),
 
       // HomeScreen(),
       //
-      // CartScreen(),
-      // SearchScreen(),
+      SearchPage(),
       OrderScreen(),
       // // WishListScreen(),
       MenuScreen(onTap: (int pageIndex) {
         _setPage(pageIndex);
-      } )
+      })
+    ];
 
-    ] ;
-
- //   if(ResponsiveHelper.isMobilePhone()) {
-  //    NetworkInfo.checkConnectivity(_scaffoldKey);
+    //   if(ResponsiveHelper.isMobilePhone()) {
+    //    NetworkInfo.checkConnectivity(_scaffoldKey);
     //}
   }
 
@@ -74,9 +70,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       },
       child: Scaffold(
         key: _scaffoldKey,
-        bottomNavigationBar:
-
-        BottomNavigationBar(
+        bottomNavigationBar: BottomNavigationBar(
           selectedItemColor: Theme.of(context).primaryColor,
           unselectedItemColor: ColorResources.COLOR_GREY,
           showUnselectedLabels: true,
@@ -84,17 +78,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
           type: BottomNavigationBarType.fixed,
           items: [
             _barItem("assets/icon/home.svg", 'Home', 0),
-            _barItem("assets/icon/heart.svg", 'category', 1),
+            _barItem("assets/icon/category-icon.svg", 'category', 1),
             _barItem("assets/icon/Search.svg", 'search', 2),
             _barItem("assets/icon/basket.svg", 'order', 3),
-            _barItem("assets/icon/user.svg", 'menu',  4)
+            _barItem("assets/icon/user.svg", 'menu', 4)
           ],
           onTap: (int index) {
             _setPage(index);
           },
         ),
-
-
         body: PageView.builder(
           controller: _pageController,
           itemCount: _screens!.length,
@@ -108,46 +100,39 @@ class _DashboardScreenState extends State<DashboardScreen> {
   }
 
   BottomNavigationBarItem _barItem(String icon, String label, int index) {
-
     return BottomNavigationBarItem(
-
-        backgroundColor:  index == _pageIndex ? Theme.of(context).primaryColor : ColorResources.COLOR_GREY,
+        backgroundColor: index == _pageIndex
+            ? Theme.of(context).primaryColor
+            : ColorResources.COLOR_GREY,
         icon: CircleAvatar(
-          backgroundColor: index == _pageIndex ? Colors.transparent : Colors.transparent,
+          backgroundColor:
+              index == _pageIndex ? Colors.transparent : Colors.transparent,
           child: Stack(
-            clipBehavior: Clip.none, children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                SvgPicture.asset(icon, color: index == _pageIndex ?  Colors.blue : ColorResources.COLOR_BLACK, height: 25),
-                Text(
-                  label
-                  ,style: TextStyle(
-                  fontSize: 9,
-                  color: index == _pageIndex ?  Colors.blue : ColorResources.COLOR_BLACK,
-
-                ),
-                )
-              ],
-            ),
-            index == 1 ? Positioned(
-              top: -7, right: -7,
-              child: Container(
-                padding: EdgeInsets.all(4),
-                alignment: Alignment.center,
-                decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.red),
-                child: Text(
-                  "1"
-                  // Provider.of<CartProvider>(context).cartList.length.toString(),
-                  // style: rubikMedium.copyWith(color: ColorResources.COLOR_WHITE, fontSize: 8),
-                ),
+            clipBehavior: Clip.none,
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  SvgPicture.asset(icon,
+                      color: index == _pageIndex
+                          ? Colors.blue
+                          : ColorResources.COLOR_BLACK,
+                      height: 25),
+                  Text(
+                    label,
+                    style: TextStyle(
+                      fontSize: 9,
+                      color: index == _pageIndex
+                          ? Colors.blue
+                          : ColorResources.COLOR_BLACK,
+                    ),
+                  )
+                ],
               ),
-            ) : SizedBox(),
-          ],
+            ],
           ),
         ),
-        label: ""
-    );
+        label: "");
   }
 
   void _setPage(int pageIndex) {
@@ -170,7 +155,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 height: 60,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
+                  color: Theme.of(context)
+                      .bottomNavigationBarTheme
+                      .backgroundColor,
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(10),
                     topRight: Radius.circular(10),
@@ -188,11 +175,16 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      bottomItems(Icons.home, 'assets/icon/home.svg', 'Home', 1),
-                      bottomItems(Icons.video_settings, 'assets/icon/basket.svg', 'Watch', 0),
-                      bottomItems(Icons.groups, 'assets/icon/bag.svg', 'Groups', 2),
-                      bottomItems(Icons.pages, 'assets/icon/heart.svg', 'Pages', 3),
-                      bottomItems(Icons.menu, 'assets/icon/user.svg', 'Menu', 4),
+                      bottomItems(
+                          Icons.home, 'assets/icon/home.svg', 'Home', 1),
+                      bottomItems(Icons.video_settings,
+                          'assets/icon/basket.svg', 'Watch', 0),
+                      bottomItems(
+                          Icons.groups, 'assets/icon/bag.svg', 'Groups', 2),
+                      bottomItems(
+                          Icons.pages, 'assets/icon/heart.svg', 'Pages', 3),
+                      bottomItems(
+                          Icons.menu, 'assets/icon/user.svg', 'Menu', 4),
                     ],
                   ),
                 ),
@@ -217,11 +209,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
   }
 
   Widget bottomSelector(
-      String svgpath,
-      String title,
-      int index,
-      ) {
-    if (_pageIndex== index) {
+    String svgpath,
+    String title,
+    int index,
+  ) {
+    if (_pageIndex == index) {
       return Column(
         children: [
           AnimatedContainer(
@@ -236,7 +228,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
             child: Center(
               child: SvgPicture.asset(
                 svgpath,
-                color: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
+                color:
+                    Theme.of(context).bottomNavigationBarTheme.backgroundColor,
               ),
             ),
           ),
@@ -257,27 +250,26 @@ class _DashboardScreenState extends State<DashboardScreen> {
   }
 
   Widget bottomSelectorIcon(
-      IconData icon,
-      int index,
-      ) {
+    IconData icon,
+    int index,
+  ) {
     return InkWell(
       onTap: (() {
         _setPage(index);
       }),
-      child: _pageIndex== index
+      child: _pageIndex == index
           ? Container()
           : Padding(
-        padding: const EdgeInsets.only(
-          top: 30.0,
-          left: 10,
-          right: 10,
-        ),
-        child: Icon(
-          icon,
-          size: 22,
-        ),
-      ),
+              padding: const EdgeInsets.only(
+                top: 30.0,
+                left: 10,
+                right: 10,
+              ),
+              child: Icon(
+                icon,
+                size: 22,
+              ),
+            ),
     );
   }
-
 }
